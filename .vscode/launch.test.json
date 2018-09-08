@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "com.robo",
+                "projectName": "com.robo",
+                "workingDirectory": "/home/robinson/workspace/algorithms",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "com.robo",
+                "projectName": "com.robo",
+                "workingDirectory": "/home/robinson/workspace/algorithms",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}
