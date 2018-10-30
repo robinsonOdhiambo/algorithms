@@ -3,10 +3,8 @@ package com.robo.algorithms.graphs.mst;
 import com.robo.algorithms.graphs.ds.UndirectedGraph;
 import com.robo.algorithms.graphs.ds.UnionFind;
 import com.robo.algorithms.graphs.ds.Edge;
-import java.util.Set;
-import java.util.TreeSet;
-import java.util.List;
-import java.util.ArrayList;
+
+import java.util.*;
 
 public class Kruskal {
     private List<Edge> mst;
@@ -14,7 +12,7 @@ public class Kruskal {
 
     public Kruskal(UndirectedGraph ug) {
         mst = new ArrayList<>();
-        Set<Edge> edges = new TreeSet<>();
+        PriorityQueue<Edge> edges = new PriorityQueue<>();
         for(int v = 0; v < ug.V(); v++) {
             for(Edge e: ug.adj(v)) {
                 edges.add(e);
@@ -23,7 +21,8 @@ public class Kruskal {
 
         UnionFind uf = new UnionFind(ug.V());
 
-        for(Edge e: edges) {
+        while(!edges.isEmpty()) {
+            Edge e = edges.poll();
             int v = e.either();
             int u = e.other(v);
             if(!uf.isConnected(v, u)) {
